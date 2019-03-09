@@ -42,4 +42,6 @@ def delete_old(backup_path, time_limit):
 
 if __name__ == '__main__':
     delete_old(backup_path, time_limit)
-    create_backup(folder_path, backup_path)
+
+    for folder_path in folder_paths:
+        create_backup(folder_path, backup_path)
