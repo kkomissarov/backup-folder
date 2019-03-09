@@ -13,8 +13,6 @@ def create_backup(folder_path, backup_path):
 
     # формируем имя архива - название папки + текущая дата
     backup_name = '{} {}.tar.gz'.format(folder_name, datetime.datetime.now().date()).replace(' ', '_').replace('-', '_')
-    print(backup_name)
-
 
     #создаем архив
     subprocess.run(['tar', '-czf', backup_name, '-C', parent_folder, folder_name])
@@ -39,9 +37,6 @@ def delete_old(backup_path, time_limit):
 
         if backup_age >= time_limit:
             os.remove(backup)
-            print('Бэкап {} удален'.format(filename))
-        else:
-            print('Ни один бэкап не удален')
 
 
 
