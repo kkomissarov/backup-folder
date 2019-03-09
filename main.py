@@ -18,7 +18,7 @@ def create_backup(folder_path, backup_path):
     subprocess.run(['tar', '-czf', backup_name, '-C', parent_folder, folder_name])
 
     #перемещаем бэкап в папку с бэкапами
-    subprocess.run(['mv', parent_folder+backup_name, backup_path])
+    subprocess.run(['mv', backup_name, backup_path])
 
     print('Бэкап {} создан'.format(backup_name))
 
